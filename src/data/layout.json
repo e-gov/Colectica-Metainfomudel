@@ -1,0 +1,122 @@
+{
+  "positions": {
+    "series": {
+      "x": 450,
+      "y": 0
+    },
+    "study": {
+      "x": 450,
+      "y": 160
+    },
+    "data-collection": {
+      "x": 70,
+      "y": 160
+    },
+    "data-file": {
+      "x": 450,
+      "y": 330
+    },
+    "data-layout": {
+      "x": 450,
+      "y": 500
+    },
+    "record": {
+      "x": 450,
+      "y": 670
+    },
+    "ncube": {
+      "x": 830,
+      "y": 670
+    },
+    "variable": {
+      "x": 450,
+      "y": 840
+    },
+    "code-list": {
+      "x": 200,
+      "y": 1020
+    },
+    "classification": {
+      "x": 700,
+      "y": 1020
+    },
+    "category": {
+      "x": 200,
+      "y": 1200
+    },
+    "classification-item": {
+      "x": 700,
+      "y": 1200
+    },
+    "quality-standard": {
+      "x": 870,
+      "y": 80
+    },
+    "quality-statement": {
+      "x": 870,
+      "y": 260
+    }
+  },
+  "routes": {
+    "r01": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r02": {
+      "source": "left",
+      "target": "right"
+    },
+    "r03": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r04": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r05": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r06": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r07": {
+      "source": "right",
+      "target": "left"
+    },
+    "r08": {
+      "source": "bottom",
+      "target": "right"
+    },
+    "r09": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r10": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r11": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r12": {
+      "source": "bottom",
+      "target": "top"
+    },
+    "r13": {
+      "source": "right",
+      "target": "left"
+    },
+    "r14": {
+      "source": "right",
+      "target": "left"
+    },
+    "r15": {
+      "source": "right",
+      "target": "left"
+    }
+  }
+}

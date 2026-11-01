@@ -1,1 +1,1 @@
-# Colectica-Metainfomudel
+# Colectica metainfomudel

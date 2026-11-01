@@ -1,0 +1,425 @@
+{
+  "title": "Colectica metainfomudel",
+  "version": "0.1.0",
+  "source": {
+    "title": "MUDEL, KIRJELDAMINE, JUURUTAMINE",
+    "type": "Confluence’i lehe PDF-eksport",
+    "exportDate": "2026-10-20",
+    "note": "Demo tugineb põhiskeemile ja nähtavatele kokkulepetele. Alamlehti ja põlvnemise skeemi eksport ei sisaldanud. Kirjeldused on lähtematerjali põhjal koostatud mustandid. Seoste nimetused on demo sõnastused; kordsused on kontrollimata ja seetõttu täitmata."
+  },
+  "groups": [
+    {
+      "id": "context",
+      "name": "Kontekst",
+      "color": "#517bb2"
+    },
+    {
+      "id": "structure",
+      "name": "Andmete struktuur",
+      "color": "#b87960"
+    },
+    {
+      "id": "meaning",
+      "name": "Tähendus ja esitus",
+      "color": "#6c8d53"
+    },
+    {
+      "id": "quality",
+      "name": "Kvaliteet",
+      "color": "#648e8b"
+    }
+  ],
+  "objects": [
+    {
+      "id": "series",
+      "name": "Sari",
+      "nameEn": "Series",
+      "group": "context",
+      "kind": "object",
+      "description": "Sari koondab seotud töid ning annab neile ühise kõrgema taseme konteksti.",
+      "details": "Ühe sarja alla võib kuuluda mitu tööd. Allsarjade kasutamine ja ajas muutumise reeglid vajavad mudeli edasisel täiendamisel täpsustamist.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "study",
+      "name": "Töö",
+      "nameEn": "Study",
+      "group": "context",
+      "kind": "object",
+      "description": "Töö koondab sisuliselt seotud statistilise tegevuse kirjeldused ja andmestikud.",
+      "details": "Seotud protsessiosad hoitakse võimaluse korral ühe töö all. Kui kirjeldused või loogika enam kokku ei sobi, käsitletakse eraldi töö loomist. Väike iga-aastane muudatus ei tähenda automaatselt uut tööd.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "data-collection",
+      "name": "Andmekogumine",
+      "nameEn": "Data Collection",
+      "group": "context",
+      "kind": "object",
+      "description": "Andmekogumise kirjeldus seostub vajaduse korral tööga.",
+      "details": "Kogumise objekt lisandub töö juurde vajaduse korral. Selle täpne sisu ja kasutamise tingimused tuleb eraldi kokku leppida.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "data-file",
+      "name": "Andmestik",
+      "nameEn": "Data File",
+      "group": "structure",
+      "kind": "object",
+      "description": "Andmestik ühendab sisuliselt kokku kuuluvad tabelid, kuubid ja muutujad loogiliseks tervikuks.",
+      "details": "Üks andmestik võib hõlmata mitut füüsilist tabelit. Kirjeldamise loogika peab katma ka tootmisliinivälised andmed, näiteks failid ja Exceli tabelid. Andmestike põlvnemine ei asenda muutujate põlvnemise kirjeldamist.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "data-layout",
+      "name": "Andmestruktuur",
+      "nameEn": "Data Layout",
+      "group": "structure",
+      "kind": "object",
+      "description": "Andmestruktuur seob alusjoonisel andmestiku ja andmetabeli tasandi.",
+      "details": "Andmestruktuuri ja andmetabeli täpne eristus ning vastavus Colectica ja DDI objektidele vajab alamlehtede põhjal täpsustamist.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "record",
+      "name": "Andmetabel",
+      "nameEn": "Records Layout",
+      "group": "structure",
+      "kind": "object",
+      "description": "Andmetabel kirjeldab alusmudelis tabeli tasandi struktuuri ning on seotud muutujate ja kuupidega.",
+      "details": "Eestikeelse nimetuse ning terminite Record ja Records Layout kasutus tuleb ühtlustada. Demo säilitab alusjoonisel kasutatud ingliskeelse nimetuse.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "ncube",
+      "name": "Kuup",
+      "nameEn": "NCube",
+      "group": "structure",
+      "kind": "object",
+      "description": "Kuup on alusmudelis eristatav struktuuriobjekt, mis seostub andmetabeli ja muutujatega.",
+      "details": "Kuubi dimensioonide, mõõdikute ja muude kirjeldusosade täpne käsitlus lisandub mudeli täiendamisel.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "variable",
+      "name": "Muutuja",
+      "nameEn": "Variable",
+      "group": "meaning",
+      "kind": "object",
+      "description": "Muutuja kirjeldab andmete välja või mõõdetavat tunnust ning seostub selle esitust täpsustavate objektidega.",
+      "details": "Põlvnemise kirjeldamise keskne eesmärk on näidata, kust konkreetne muutuja pärineb ja kuhu edasi liigub. Kontseptuaalne muutuja ja esindusmuutuja on lähtematerjalis nimetatud, kuid nende seoseid selles demos veel ei kujutata.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "code-list",
+      "name": "Koodiloend",
+      "nameEn": "Code List",
+      "group": "meaning",
+      "kind": "object",
+      "description": "Koodiloend on alusmudelis muutujaga seotud esitusobjekt, mis seostub kategooriatega.",
+      "details": "Koodide ja kategooriate täpne eristus ning eraldi koodiobjekti vajadus tuleb siduda kasutatava DDI ja Colectica teostusega. Demo ei võrdsusta koodi kategooriaga.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "category",
+      "name": "Kategooria",
+      "nameEn": "Category",
+      "group": "meaning",
+      "kind": "object",
+      "description": "Kategooria väljendab alusmudelis koodiloendi või klassifikaatori elemendiga seotud tähendust.",
+      "details": "Kategooria täpne definitsioon, korduskasutus ja seosed mõistega vajavad mudeli detailsemas kirjelduses täpsustamist.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "classification",
+      "name": "Klassifikaatori versioon",
+      "nameEn": "Statistical Classification",
+      "group": "meaning",
+      "kind": "object",
+      "description": "Klassifikaatori versioon koondab konkreetse versiooni klassifikaatori elemendid.",
+      "details": "Klassifikaatori sarja, tasemete ja vastavustabelite kirjeldus jääb esialgse alusjoonise ulatusest välja. Neid saab samas andmestruktuuris hiljem juurde lisada.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "classification-item",
+      "name": "Klassifikaatori element",
+      "nameEn": "Classification Item",
+      "group": "meaning",
+      "kind": "object",
+      "description": "Klassifikaatori element kuulub klassifikaatori versiooni ja seostub kategooriaga.",
+      "details": "Alusjoonise ingliskeelset silti on demos selguse huvides täpsustatud kujule Classification Item. Täpne termin ja tehniline vastavus tuleb kinnitada.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "quality-standard",
+      "name": "Kvaliteedistandard",
+      "nameEn": "Quality Standard",
+      "group": "quality",
+      "kind": "description",
+      "description": "Kvaliteedistandard on alusjoonisel esitatud tööga seotud kvaliteedikirjelduste osana.",
+      "details": "PDF-is on kvaliteedistandard ja kvaliteediaruanne ühises raamistikus. Demos on need navigeerimiseks eraldi kirjed; see ei kinnita nende iseseisvat objektitüüpi Colecticas.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    },
+    {
+      "id": "quality-statement",
+      "name": "Kvaliteediaruanne",
+      "nameEn": "Quality Statement",
+      "group": "quality",
+      "kind": "description",
+      "description": "Kvaliteediaruanne on tööga seotud kvaliteedi kirjeldus.",
+      "details": "Lähtematerjali objektide loendis on märge, et kvaliteediaruanne ei ole objektitüüp. Demos kuvatakse seda kirjeldusosana, et alusjoonise kvaliteediinfo oleks leitav; täpne teostus tuleb kinnitada.",
+      "status": "Täpsustamisel",
+      "attributes": [],
+      "mapping": {
+        "ddi": null,
+        "colectica": null,
+        "gsim": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "r01",
+      "source": "series",
+      "target": "study",
+      "label": "koondab",
+      "description": "Sari annab töödele ühise konteksti.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r02",
+      "source": "study",
+      "target": "data-collection",
+      "label": "seostub kogumisega",
+      "description": "Andmekogumine lisandub töö juurde vajaduse korral.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r03",
+      "source": "study",
+      "target": "data-file",
+      "label": "koondab",
+      "description": "Tööga seostatakse selle andmestikud.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r04",
+      "source": "data-file",
+      "target": "data-layout",
+      "label": "seostub struktuuriga",
+      "description": "Alusjoonisel on andmestik seotud andmestruktuuriga.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r05",
+      "source": "data-layout",
+      "target": "record",
+      "label": "seostub tabeliga",
+      "description": "Alusjoonisel on andmestruktuur seotud andmetabeliga.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r06",
+      "source": "record",
+      "target": "variable",
+      "label": "seostub muutujaga",
+      "description": "Andmetabeli tasand seostub muutujatega.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r07",
+      "source": "record",
+      "target": "ncube",
+      "label": "seostub kuubiga",
+      "description": "Alusjoonisel on andmetabel ja kuup omavahel seotud.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r08",
+      "source": "ncube",
+      "target": "variable",
+      "label": "seostub muutujaga",
+      "description": "Kuubi kirjeldus seostub muutujatega.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r09",
+      "source": "variable",
+      "target": "code-list",
+      "label": "kasutab esituseks",
+      "description": "Muutuja võib seostuda koodiloendiga; täpsed kasutustingimused tuleb kinnitada.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r10",
+      "source": "variable",
+      "target": "classification",
+      "label": "seostub versiooniga",
+      "description": "Muutuja on alusjoonisel seotud klassifikaatori versiooniga.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r11",
+      "source": "code-list",
+      "target": "category",
+      "label": "seostub kategooriaga",
+      "description": "Alusjoonisel on koodiloend seotud kategooriaga; tehniline koodiobjekt selles vaates puudub.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r12",
+      "source": "classification",
+      "target": "classification-item",
+      "label": "koondab",
+      "description": "Klassifikaatori versioon koondab klassifikaatori elemendid.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r13",
+      "source": "category",
+      "target": "classification-item",
+      "label": "seostub elemendiga",
+      "description": "Kategooria ja klassifikaatori elemendi vaheline seos lähtub alusjoonisest.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": false
+    },
+    {
+      "id": "r14",
+      "source": "study",
+      "target": "quality-standard",
+      "label": "kvaliteediinfo",
+      "description": "Demo tõlgendus alusjoonise ühisest kvaliteedikirjelduste raamistikust; eraldi seose teostus ei ole kinnitatud.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": true
+    },
+    {
+      "id": "r15",
+      "source": "study",
+      "target": "quality-statement",
+      "label": "kvaliteediinfo",
+      "description": "Demo tõlgendus alusjoonise ühisest kvaliteedikirjelduste raamistikust; eraldi seose teostus ei ole kinnitatud.",
+      "sourceCardinality": null,
+      "targetCardinality": null,
+      "status": "Täpsustamisel",
+      "demoInterpretation": true
+    }
+  ]
+}
