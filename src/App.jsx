@@ -32,7 +32,7 @@ function Home() {
   return <>
     <div className="eyebrow">STATISTIKAAMET · MUDELI ÜLEVAADE</div>
     <div className="page-heading"><h1>Colectica metainfomudel</h1></div>
-    <p className="intro">Uuri Statistikaametis juurutatava Colectica metainfomudeli ülesehitust. Alusmudel seob statistilise töö, andmete struktuuri ja nende tähenduse ühtseks tervikuks.</p>
+    <p className="intro">Uuri Colectica metainfomudeli ülesehitust, klikkides objektile.</p>
     <ModelDiagram/>
     <div className="below-diagram"><Link to="/objektid">Kõik kirjed <Icon name="arrow" size={16}/></Link></div>
     <section className="home-note"><span className="section-number">01 / ALUSMUDEL</span><div><h2>Tervikust üksikasjadeni</h2><p>Objekti lehel näed selle seoseid teiste objektidega. Liigu mudelis mööda seoseid või vali objekt vasakust menüüst.</p></div></section>
