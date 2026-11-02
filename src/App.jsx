@@ -20,20 +20,19 @@ function Sidebar({ open, close }) {
     <Link to="/" className="sidebar__home" onClick={close}><Icon name="model" size={18}/>Alusmudeli ülevaade<Icon name="arrow" size={16}/></Link>
     <div className="sidebar__heading">MUDELI KIRJED <span>{model.objects.length}</span></div>
     <Search value={query} onChange={setQuery} placeholder="Otsi objekti…" label="Otsi menüüst objekti"/>
-    {model.groups.map((group) => {
-      const items = model.objects.filter((o) => o.group === group.id && `${o.name} ${o.nameEn}`.toLocaleLowerCase('et').includes(query.toLocaleLowerCase('et')));
-      return items.length > 0 && <div className="sidebar__group" key={group.id}><div className="group-caption"><span style={{ background: group.color }}/>{group.name}</div>{items.map((o) => <NavLink key={o.id} to={objectPath(o.id)} onClick={close}>{o.name}<span>{o.nameEn}</span></NavLink>)}</div>;
-    })}
+    <div className="sidebar__group">
+      {model.objects.filter((o) => `${o.name} ${o.nameEn}`.toLocaleLowerCase('et').includes(query.toLocaleLowerCase('et'))).map((o) =>
+        <NavLink key={o.id} to={objectPath(o.id)} onClick={close}>{o.name}<span>{o.nameEn}</span></NavLink>
+      )}
+    </div>
     {query && !model.objects.some((o) => `${o.name} ${o.nameEn}`.toLocaleLowerCase('et').includes(query.toLocaleLowerCase('et'))) && <p className="empty">Objekti ei leitud.</p>}
   </aside>;
 }
-function Legend() { return <div className="legend">{model.groups.map((g) => <span key={g.id}><i style={{ background: g.color }}/>{g.name}</span>)}</div>; }
 function Home() {
   return <>
     <div className="eyebrow">STATISTIKAAMET · MUDELI ÜLEVAADE</div>
     <div className="page-heading"><h1>Colectica metainfomudel</h1></div>
-    <p className="intro">Metainfomudelit saab uurida lähemalt, klikkides objektidele.</p>
-    <div className="model-meta"><Legend/></div>
+    <p className="intro">Uuri Statistikaametis juurutatava Colectica metainfomudeli ülesehitust. Alusmudel seob statistilise töö, andmete struktuuri ja nende tähenduse ühtseks tervikuks.</p>
     <ModelDiagram/>
     <div className="below-diagram"><Link to="/objektid">Kõik kirjed <Icon name="arrow" size={16}/></Link></div>
     <section className="home-note"><span className="section-number">01 / ALUSMUDEL</span><div><h2>Tervikust üksikasjadeni</h2><p>Objekti lehel näed selle seoseid teiste objektidega. Liigu mudelis mööda seoseid või vali objekt vasakust menüüst.</p></div></section>
@@ -68,7 +67,19 @@ function ObjectPage() {
 function Directory() {
   const [query, setQuery] = useState('');
   const items = model.objects.filter((o) => `${o.name} ${o.nameEn}`.toLocaleLowerCase('et').includes(query.toLocaleLowerCase('et')));
-  return <><div className="eyebrow">MUDELI SIRVIMINE</div><div className="page-heading"><h1>Objektid ja kirjeldusosad</h1></div><p className="intro">Alusmudelis kasutatud kirjed, nende tähendused ja omavahelised seosed.</p><div className="directory-search"><Search value={query} onChange={setQuery}/><span role="status">{items.length} tulemust</span></div>{model.groups.map((g) => { const grouped = items.filter((o) => o.group === g.id); return grouped.length > 0 && <section className="directory-group" key={g.id}><h2><i style={{ background: g.color }}/>{g.name}</h2><div className="object-grid">{grouped.map((o) => <Link className="object-card" to={objectPath(o.id)} key={o.id} style={{ '--group-color': g.color }}><span className="object-card__en">{o.nameEn}</span><h3>{o.name}</h3><p>{o.description}</p><span className="object-card__footer">{o.kind === 'description' ? 'Kirjeldusosa' : 'Objekti kirjeldus'}<Icon name="arrow" size={18}/></span></Link>)}</div></section>; })}{items.length === 0 && <div className="empty-state">Ühtegi sobivat kirjet ei leitud. Proovi teist otsingusõna.</div>}</>;
+  return <>
+    <div className="page-heading"><h1>Objektid ja kirjeldusosad</h1></div>
+    <p className="intro">Alusmudelis kasutatud kirjed, nende tähendused ja omavahelised seosed.</p>
+    <div className="directory-search"><Search value={query} onChange={setQuery}/><span role="status">{items.length} tulemust</span></div>
+    <div className="object-grid">
+      {items.map((o) => <Link className="object-card" to={objectPath(o.id)} key={o.id}>
+        <span className="object-card__en">{o.nameEn}</span>
+        <h3>{o.name}</h3>
+        <p>{o.description}</p>
+      </Link>)}
+    </div>
+    {items.length === 0 && <div className="empty-state">Ühtegi sobivat kirjet ei leitud. Proovi teist otsingusõna.</div>}
+  </>;
 }
 function NotFound() { return <div className="not-found"><div className="eyebrow">404 / KIRJET EI LEITUD</div><h1>Seda lehte mudelis ei ole.</h1><p>Link võib olla aegunud või objekt ei kuulu veel sellesse versiooni.</p><Link to="/" className="primary-link">Alusmudeli juurde <Icon name="arrow" size={18}/></Link></div>; }
 export default function App() {

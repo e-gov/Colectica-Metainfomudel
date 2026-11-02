@@ -4,18 +4,16 @@ import {
   ReactFlow, Background, Controls, ControlButton, Handle, Position,
   BaseEdge, EdgeLabelRenderer, getSmoothStepPath,
 } from '@xyflow/react';
-import { model, layout, objectById, groupById, objectPath, relationsFor } from '../model.js';
+import { model, layout, objectById, objectPath, relationsFor } from '../model.js';
 import Icon from './Icon.jsx';
 
 const sides = { top: Position.Top, right: Position.Right, bottom: Position.Bottom, left: Position.Left };
 function ObjectNode({ data }) {
   const object = data.object;
-  const group = groupById[object.group];
-  return <div className={`object-node ${data.focus ? 'object-node--focus' : ''} ${data.dimmed ? 'object-node--dimmed' : ''}`} style={{ '--group-color': group.color }}>
+  return <div className={`object-node ${data.focus ? 'object-node--focus' : ''} ${data.dimmed ? 'object-node--dimmed' : ''}`} style={{ '--group-color': '#777' }}>
     {Object.entries(sides).map(([id, position]) => <Handle key={`${id}-in`} id={`${id}-in`} type="target" position={position} isConnectable={false} />)}
     {Object.entries(sides).map(([id, position]) => <Handle key={`${id}-out`} id={`${id}-out`} type="source" position={position} isConnectable={false} />)}
     <Link to={objectPath(object.id)} className="object-node__link nodrag nopan" aria-label={`Otsi üksikasju: ${object.name} (${object.nameEn})`}>
-      <span className="object-node__category">{object.kind === 'description' ? 'Kirjeldusosa' : group.name}</span>
       <strong>{object.name}</strong>
       <span className="object-node__english">{object.nameEn}</span>
       <span className="object-node__arrow"><Icon name="arrow" size={16}/></span>
